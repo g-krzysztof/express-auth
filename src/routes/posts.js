@@ -12,4 +12,11 @@ router.get('/', verify, (req, res)=>{
 
 });
 
+router.get('/test', (req, res) =>{
+    res.json({
+        test: "working"
+    })
+
+});
+
 module.exports = router;

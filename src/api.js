@@ -3,7 +3,7 @@ const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
-
+const serverless = require('serverless-http');
 
 //Import Routes
 const authRoute = require('./routes/auth');
@@ -25,8 +25,11 @@ mongoose.connect(
 app.use(express.json());
 
 //Route Middlewares
-app.use('/api/user', authRoute);
-app.use('/api/posts', postsRoute);
+app.use('/.netlify/functions/api/user', authRoute);
+app.use('/.netlify/functions/api/posts', postsRoute);
 
 app.listen(3000, ()=> console.log('Server Up an running'));
+
+module.exports = app;
+module.exports.handler = serverless(app);
 

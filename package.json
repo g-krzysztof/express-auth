@@ -2,9 +2,11 @@
   "name": "express_auth",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/api.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon src/api.js",
+    "startNetlify": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src"
   },
   "author": "hello@krzysztofg.pl",
   "license": "ISC",
@@ -14,7 +16,9 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.6"
+    "mongoose": "^5.10.6",
+    "netlify-lambda": "^2.0.1",
+    "serverless-http": "^2.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
