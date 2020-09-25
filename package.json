@@ -4,8 +4,7 @@
   "description": "",
   "main": "src/api.js",
   "scripts": {
-    "start": "nodemon src/api.js",
-    "startNetlify": "./node_modules/.bin/netlify-lambda serve src",
+    "start": "./node_modules/.bin/netlify-lambda serve src",
     "build": "./node_modules/.bin/netlify-lambda build src"
   },
   "author": "hello@krzysztofg.pl",
