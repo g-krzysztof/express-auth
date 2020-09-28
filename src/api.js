@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express();
 const dotenv = require('dotenv');
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
+const cors = require('cors')
 
 const serverless = require('serverless-http');
 
@@ -23,6 +24,7 @@ mongoose.connect(
 
 //Middlewares
 app.use(express.json());
+app.use(cors());
 
 //Route Middlewares
 app.use('/.netlify/functions/api/user', authRoute);
