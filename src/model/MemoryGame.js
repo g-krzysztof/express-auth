@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const memoryGameSchema = new mongoose.Schema({
     score: {
-        type: Number,
+        type: Array,
         required: true,
     },
     user: {
